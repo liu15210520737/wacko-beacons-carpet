@@ -35,6 +35,12 @@ wacko-beacons 是一个概念验证：利用服务端不校验信标效果与金
 /wacko-beacons-carpet wackoBeacons true
 ```
 
+## 客户端
+
+需要安装移植至26.2的wacko-beacons模组
+
+详见 https://github.com/liu15210520737/wacko-beacons
+
 ## 构建
 
 需要 JDK 25：
