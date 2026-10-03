@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "wacko-beacons-carpet",
+  "version": "${version}",
+  "name": "Wacko Beacons Carpet",
+  "description": "Carpet 附属：规则 wackoBeacons 开启后恢复 26.1 之前的服务端信标效果行为（配合客户端 wacko-beacons 模组使用）。移植自 getcmdrolled/wacko-beacons 的概念验证。",
+  "authors": [
+    "GetCmdRolled (原概念验证)",
+    "ported by Kimi"
+  ],
+  "contact": {
+    "sources": "https://github.com/getcmdrolled/wacko-beacons"
+  },
+  "license": "CC0-1.0",
+  "icon": "assets/wacko-beacons-carpet/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.scoobis.carpet.WackoBeaconsCarpetExtension"
+    ]
+  },
+  "mixins": [
+    "wacko-beacons-carpet.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.19.3",
+    "minecraft": ">=26.2 <26.3",
+    "java": ">=25",
+    "carpet": ">=26.2"
+  }
+}

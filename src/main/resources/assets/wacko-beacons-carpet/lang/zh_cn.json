@@ -1,0 +1,4 @@
+{
+  "wacko-beacons-carpet.rule.wackoBeacons.desc": "恢复 26.1 之前的服务端信标行为：允许无视信标塔层级设置任意信标效果（如一层信标选力量、生命恢复作为主效果），且不再踢出发送非法信标效果的玩家",
+  "wacko-beacons-carpet.rule.wackoBeacons.extra.0": "玩家需要配合客户端模组 wacko-beacons（26.2 移植版）才能实际选择这些效果"
+}

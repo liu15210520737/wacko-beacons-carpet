@@ -1,0 +1,4 @@
+{
+  "wacko-beacons-carpet.rule.wackoBeacons.desc": "Restore pre-26.1 server-side beacon behavior: allows setting any beacon effect regardless of pyramid levels (e.g. Strength on a 1-layer beacon, Regeneration as primary effect), and stops kicking players that send invalid beacon effects",
+  "wacko-beacons-carpet.rule.wackoBeacons.extra.0": "Client-side mod wacko-beacons (26.2 port) is required for players to actually pick those effects"
+}

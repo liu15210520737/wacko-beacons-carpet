@@ -1,0 +1,64 @@
+plugins {
+	id 'net.fabricmc.fabric-loom' version '1.18.2'
+	id 'maven-publish'
+}
+
+version = project.mod_version
+group = project.maven_group
+
+base {
+	archivesName = project.archives_base_name
+}
+
+repositories {
+	// Carpet (gnembon/masa 构建) 发布在 masa.dy.fi 的 maven
+	maven {
+		name = 'Carpet'
+		url = 'https://masa.dy.fi/maven/'
+	}
+}
+
+dependencies {
+	minecraft "com.mojang:minecraft:${project.minecraft_version}"
+	// Minecraft 26.1+ 不再混淆，Loom 非混淆模式下直接使用 implementation
+	implementation "net.fabricmc:fabric-loader:${project.loader_version}"
+	implementation "carpet:fabric-carpet:${project.carpet_version}"
+}
+
+processResources {
+	inputs.property "version", project.version
+
+	filesMatching("fabric.mod.json") {
+		expand "version": inputs.properties.version
+	}
+}
+
+tasks.withType(JavaCompile).configureEach {
+	it.options.release = 25
+}
+
+java {
+	withSourcesJar()
+
+	sourceCompatibility = JavaVersion.VERSION_25
+	targetCompatibility = JavaVersion.VERSION_25
+}
+
+jar {
+	inputs.property "archivesName", project.base.archivesName
+
+	from("LICENSE") {
+		rename { "${it}_${inputs.properties.archivesName}"}
+	}
+}
+
+publishing {
+	publications {
+		create("mavenJava", MavenPublication) {
+			artifactId = project.archives_base_name
+			from components.java
+		}
+	}
+	repositories {
+	}
+}
